@@ -1,9 +1,9 @@
 import pandas as pd
 import numpy as np
 
-df1 = pd.read_parquet(r"PI_ML_OPS\clean_steam_games")
-df2 = pd.read_parquet(r"PI_ML_OPS\clean_review")
-df3 = pd.read_parquet(r"PI_ML_OPS\clean_items")
+df1 = pd.read_parquet("clean_steam_games")
+df2 = pd.read_parquet("clean_review")
+df3 = pd.read_parquet("clean_items")
 
 df_marge_item = pd.merge(df1, df3,on="item_id" ) #tabla de steam junto con item
 
