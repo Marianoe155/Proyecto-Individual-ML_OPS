@@ -22,14 +22,14 @@ async def developer(desarrollador: str):
         return JSONResponse(contenido_Free.to_dict(orient="records"))
 
 #funcion N2
-
+""""
 @app.get("/userdata/{Userd_id}")
 async def userdata( User_id : str ):
     usuario = userdata_(User_id)
     return usuario
 
 #funcion N3
-"""
+
 @app.get("/UserForGenre/{genero}")
 async def UserForGenre(genero: str):
     Horas_por_año = UserForGenre_(genero)
