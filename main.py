@@ -29,12 +29,12 @@ async def userdata( User_id : str ):
     return usuario
 
 #funcion N3
-
+"""
 @app.get("/UserForGenre/{genero}")
 async def UserForGenre(genero: str):
     Horas_por_año = UserForGenre_(genero)
     return Horas_por_año
-
+"""
 #funcion N4
 
 @app.get("/best_developer_year/{year}")
