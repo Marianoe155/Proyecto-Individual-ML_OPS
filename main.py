@@ -1,6 +1,6 @@
 from typing import Union
 from fastapi import FastAPI
-from funciones import developer_ #,userdata_,UserForGenre_,best_developer_year_,developer_reviews_analysis_
+#from funciones import developer_ #,userdata_,UserForGenre_,best_developer_year_,developer_reviews_analysis_
 from fastapi.responses import JSONResponse 
 
 app= FastAPI()
