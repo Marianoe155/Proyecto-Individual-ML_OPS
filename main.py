@@ -1,6 +1,6 @@
 from typing import Union
 from fastapi import FastAPI
-from funciones import developer_reviews_analysis_,developer_ #,userdata_,UserForGenre_,best_developer_year_,developer_reviews_analysis_
+from funciones import developer_reviews_analysis_,developer_,best_developer_year_ #,userdata_,UserForGenre_,best_developer_year_
 from fastapi.responses import JSONResponse 
 
 app= FastAPI()
@@ -34,7 +34,7 @@ async def userdata( User_id : str ):
 async def UserForGenre(genero: str):
     Horas_por_año = UserForGenre_(genero)
     return Horas_por_año
-
+"""
 #funcion N4
 
 @app.get("/best_developer_year/{year}")
@@ -47,7 +47,7 @@ async def Best_developer_year(year: str):
         return {"error": str(e)}
 
 #funcion N5
-"""
+
 @app.get("/developer_reviews_analysis/{developer}")
 async def developer_reviews_analysis(developer: str):
     Reseñas = developer_reviews_analysis_(developer)

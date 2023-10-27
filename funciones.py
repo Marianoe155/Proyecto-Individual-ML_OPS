@@ -86,7 +86,7 @@ def UserForGenre_(genero):
         Horas_por_año[clave_formateada] = valor_formateado 
 
     return f"Usuario con más horas jugadas para Género {genero} : {usur_mas_horas}, Horas jugadas:{Horas_por_año}"
-
+"""
 #funcion N4
 
 df_f4 = df_merge_review[["Año_posteo","recommend","sentiment_analysis","developer","app_name"]] 
@@ -104,7 +104,7 @@ def best_developer_year_(año):
 
     # Devolver el top 3 de desarrolladores
     return f"Puesto1:{top_desarrolladores[0]}, Puesto2:{top_desarrolladores[1]}, Puesto3:{top_desarrolladores[2]}"
-"""
+
 #funcion N5
 
 def developer_reviews_analysis_(developer):
