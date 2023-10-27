@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-
+"""
 df1 = pd.read_parquet("clean_steam_games")
 df2 = pd.read_parquet("clean_review")
 df3 = pd.read_parquet("clean_items")
@@ -41,7 +41,7 @@ def developer_(desarrollador):
     return tabla
 
 #funcion N2
-"""
+
 df_f2 = df_merge_review[["user_id","price","recommend","item_id"]]
 def userdata_(User_id):
 
