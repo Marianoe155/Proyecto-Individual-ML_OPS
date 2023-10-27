@@ -1,14 +1,14 @@
 from typing import Union
 from fastapi import FastAPI
-#from funciones import developer_ #,userdata_,UserForGenre_,best_developer_year_,developer_reviews_analysis_
+from funciones import developer_reviews_analysis_#developer_ #,userdata_,UserForGenre_,best_developer_year_,developer_reviews_analysis_
 from fastapi.responses import JSONResponse 
 
 app= FastAPI()
-
+"""
 @app.get("/")
 async def root():
     return {"message":"Hello world"}
-"""
+
 @app.get("/items/{item_id}")
 def read_item (item_id: int, q: Union[str, None] = None):
     return {"item_id": item_id, "q": q}
@@ -47,11 +47,11 @@ async def Best_developer_year(year: str):
         return {"error": str(e)}
 
 #funcion N5
-
+"""
 @app.get("/developer_reviews_analysis/{developer}")
 async def developer_reviews_analysis(developer: str):
     Reseñas = developer_reviews_analysis_(developer)
     return Reseñas
-"""
+
 
 

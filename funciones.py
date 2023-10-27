@@ -1,16 +1,16 @@
 import pandas as pd
 import numpy as np
 
-"""
+
 df1 = pd.read_parquet("clean_steam_games")
 df2 = pd.read_parquet("clean_review")
-df3 = pd.read_parquet("clean_items")
+# df3 = pd.read_parquet("clean_items")
 
-df_marge_item = pd.merge(df1, df3,on="item_id" ) #tabla de steam junto con item
+# df_marge_item = pd.merge(df1, df3,on="item_id" ) #tabla de steam junto con item
 
 df_merge_review = pd.merge(df1 ,df2, on="item_id") #tabla de steam junto con review
 
-
+"""
 #funcion N1
 
 df_f1 = df1[["item_id", "price","developer","Año_lanzamiento"]] #tabla que utilizo en la funcion 1
@@ -104,7 +104,7 @@ def best_developer_year_(año):
 
     # Devolver el top 3 de desarrolladores
     return f"Puesto1:{top_desarrolladores[0]}, Puesto2:{top_desarrolladores[1]}, Puesto3:{top_desarrolladores[2]}"
-
+"""
 #funcion N5
 
 def developer_reviews_analysis_(developer):
@@ -133,4 +133,4 @@ def developer_reviews_analysis_(developer):
     # Se devuelve un diccionario con los resultados obtenidos
     return dicc
 
-"""
+
