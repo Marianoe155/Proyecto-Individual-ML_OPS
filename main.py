@@ -1,6 +1,6 @@
 from typing import Union
 from fastapi import FastAPI
-from funciones import developer_reviews_analysis_#developer_ #,userdata_,UserForGenre_,best_developer_year_,developer_reviews_analysis_
+from funciones import developer_reviews_analysis_,developer_ #,userdata_,UserForGenre_,best_developer_year_,developer_reviews_analysis_
 from fastapi.responses import JSONResponse 
 
 app= FastAPI()
@@ -12,7 +12,7 @@ async def root():
 @app.get("/items/{item_id}")
 def read_item (item_id: int, q: Union[str, None] = None):
     return {"item_id": item_id, "q": q}
-
+"""
 #funcion N1
 
 @app.get("/developer/{desarrollador}")
@@ -20,7 +20,7 @@ async def developer(desarrollador: str):
         contenido_Free = developer_(desarrollador)
             # Devolver el resultado como respuesta JSON
         return JSONResponse(contenido_Free.to_dict(orient="records"))
-
+"""
 #funcion N2
 
 @app.get("/userdata/{Userd_id}")
