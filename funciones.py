@@ -39,7 +39,8 @@ def developer_(desarrollador):
     tabla = tabla.rename(columns={"release_year" : "Año"})
 
     return tabla
-"""
+
+
 #funcion N2
 
 df_f2 = df_merge_review[["user_id","price","recommend","item_id"]]
@@ -48,7 +49,7 @@ def userdata_(User_id):
     # Filtrar los datos para el usuario especificado
     user_data = df_f2[df_f2["user_id"] == User_id]
 
-    user_items = df3[df3["user_id"] == User_id]
+    #user_items = df3[df3["user_id"] == User_id]
 
     # Calcular la cantidad de dinero gastado por el usuario
     dinero_gastado = round(user_data["price"].sum(),2)
@@ -58,12 +59,13 @@ def userdata_(User_id):
     porcentaje_recomendacion = round(recomendacion / len(user_data) * 100)
 
     # Calcular la cantidad de items
-    cantidad_de_items = user_items["item_id"].nunique()
+    cantidad_de_items = df_f2[df_f2["user_id"] == User_id]["item_id"].count() 
+                        #user_items["item_id"].nunique()
 
     # Crear un diccionario con los resultados
     resultados = {f"Usuario X:{User_id}, Dinero gastado: {dinero_gastado}USD, % de recomendación: {porcentaje_recomendacion}%, Cantidad de items: {cantidad_de_items}"}
     return resultados
-
+"""
 #funcion N3
 
 df_f3 = df_marge_item.drop(columns=["item_id","app_name","price","developer","items_count","item_name"]) #tabla que utilizo en la funcion 3
