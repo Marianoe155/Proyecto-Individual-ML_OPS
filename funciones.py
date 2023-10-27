@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 
+
 df1 = pd.read_parquet("clean_steam_games")
 df2 = pd.read_parquet("clean_review")
 df3 = pd.read_parquet("clean_items")
@@ -13,6 +14,7 @@ df_merge_review = pd.merge(df1 ,df2, on="item_id") #tabla de steam junto con rev
 #funcion N1
 
 df_f1 = df1[["item_id", "price","developer","Año_lanzamiento"]] #tabla que utilizo en la funcion 1
+
 def developer_(desarrollador):
     df_deve = df_f1[df_f1["developer"] == desarrollador] #llamo al desarrollador
     
@@ -39,7 +41,7 @@ def developer_(desarrollador):
     return tabla
 
 #funcion N2
-
+"""
 df_f2 = df_merge_review[["user_id","price","recommend","item_id"]]
 def userdata_(User_id):
 
@@ -131,3 +133,4 @@ def developer_reviews_analysis_(developer):
     # Se devuelve un diccionario con los resultados obtenidos
     return dicc
 
+"""
