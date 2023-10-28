@@ -5,7 +5,7 @@ import numpy as np
 df1 = pd.read_parquet("clean_steam_games")
 df2 = pd.read_parquet("clean_review")
 # df3 = pd.read_parquet("clean_items")ES EL PROBLEMA, ESTE , ESTE ITEMS ES EL PROBLEMA 
-
+df3 = pd.read_parquet("clean_items",chunksize=5000)
 # df_marge_item = pd.merge(df1, df3,on="item_id" ) #tabla de steam junto con item
 
 df_merge_review = pd.merge(df1 ,df2, on="item_id") #tabla de steam junto con review
@@ -56,10 +56,11 @@ def userdata_(User_id):
 
     # Calcular el porcentaje de recomendación en base a reviews.recommend
     recomendacion = user_data["recommend"].sum()
+    
     porcentaje_recomendacion = round(recomendacion / len(user_data) * 100)
 
     # Calcular la cantidad de items
-    cantidad_de_items = df_f2[df_f2["user_id"] == User_id]["item_id"].count() 
+    cantidad_de_items = df_f2[df_f2["user_id"] == User_id]["item_id"].count() #no utilizo la tabla items por que es demasiada pesada
                         #user_items["item_id"].nunique()
 
     # Crear un diccionario con los resultados
