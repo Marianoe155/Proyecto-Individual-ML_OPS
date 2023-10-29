@@ -66,9 +66,12 @@ def userdata_(User_id):
     # Crear un diccionario con los resultados
     resultados = {f"Usuario X:{User_id}, Dinero gastado: {dinero_gastado}USD, % de recomendación: {porcentaje_recomendacion}%, Cantidad de items: {cantidad_de_items}"}
     return resultados
-"""
+
 #funcion N3
 
+### La funcion N3 no me funciona en el render, porque necesito cargar el dataframe de itmems y ocupa mas de 500mb de memoria ram 
+### Pero de manera local en fastapi funciona
+"""
 df_f3 = df_marge_item.drop(columns=["item_id","app_name","price","developer","items_count","item_name"]) #tabla que utilizo en la funcion 3
 
 def UserForGenre_(genero):
@@ -137,26 +140,35 @@ def developer_reviews_analysis_(developer):
     return dicc
 
 #funcion_de_ML N6 
-with open ("modelo_de_ML.pkl", "rb") as archivo: 
+with open ("modelo_de_ML.pkl", "rb") as archivo: # abro el archivo donde tengo guardado el modelo de ML
     modelo_pickle = pickle.load(archivo)
 
 def recomendacion_usuario_(id_usuario):
+    if not (merge_ML["user_id"] == id_usuario).any():
+        print(f"El valor {id_usuario} no está en la columna 'mi_columna'.")
+    else:
+    # Veo los juegos jugados por el usuario
+        juegos_jugados = merge_ML[merge_ML["user_id"] == id_usuario]["app_name"].unique()
+
+    # Guardo todos los juegos en una variable
+        juegos = merge_ML["app_name"].unique()
     
-    juegos_jugados = merge_ML[merge_ML["user_id"] == id_usuario]["app_name"].unique()
-    
-    juegos = merge_ML["app_name"].unique()
-    
-    juegos_no_jugados = list(set(juegos) - set(juegos_jugados))
+    # Crear una lista de juegos no valorados por el usuario específico
+        juegos_no_jugados = list(set(juegos) - set(juegos_jugados))
 
-    predic_no_jugados = [modelo_pickle.predict(id_usuario, linea) for linea in juegos_no_jugados]
+    # Hacemos predicciones de los juegos no jugados por el usuario
+        predic_no_jugados = [modelo_pickle.predict(id_usuario, linea) for linea in juegos_no_jugados]
 
-    Top5_recomm = sorted(predic_no_jugados, key=lambda x: x.est, reverse=True)[:5] 
+    # Ordeno la prediccion de acuerdo a su respectiva valoración y obtengo los 5 primeros
+        Top5_recomm = sorted(predic_no_jugados, key=lambda x: x.est, reverse=True)[:5] 
 
-    lista_juegos = []
-    for recomendacion in Top5_recomm:
-        lista_juegos.append(recomendacion.iid)
+    # Coloco los juegos recomendados en una lista
+        lista_juegos = []
+        for recomendacion in Top5_recomm:
+            lista_juegos.append(recomendacion.iid)
 
-    return {f"Juego 1:{lista_juegos[0]}, Juego 2:{lista_juegos[1]}, Juego 3:{lista_juegos[2]}, Juego 4:{lista_juegos[3]}, Juego 5:{lista_juegos[4]}"}
+    # 5 juegos de recomendacion
+        return {f"Juego 1:{lista_juegos[0]}, Juego 2:{lista_juegos[1]}, Juego 3:{lista_juegos[2]}, Juego 4:{lista_juegos[3]}, Juego 5:{lista_juegos[4]}"}
 
     
 
