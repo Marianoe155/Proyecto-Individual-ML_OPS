@@ -145,7 +145,7 @@ with open ("modelo_de_ML.pkl", "rb") as archivo: # abro el archivo donde tengo g
 
 def recomendacion_usuario_(id_usuario):
     if not (merge_ML["user_id"] == id_usuario).any():
-        print(f"El valor {id_usuario} no está en la columna 'mi_columna'.")
+        return {f"El usuario {id_usuario} no está en el data set."}
     else:
     # Veo los juegos jugados por el usuario
         juegos_jugados = merge_ML[merge_ML["user_id"] == id_usuario]["app_name"].unique()
