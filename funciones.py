@@ -154,7 +154,7 @@ def recomendacion_usuario_(id_usuario):
 
     lista_juegos = []
     for recomendacion in Top5_recomm:
-    lista_juegos.append(recomendacion.iid)
+        lista_juegos.append(recomendacion.iid)
 
     return {f"Juego 1:{lista_juegos[0]}, Juego 2:{lista_juegos[1]}, Juego 3:{lista_juegos[2]}, Juego 4:{lista_juegos[3]}, Juego 5:{lista_juegos[4]}"}
 
