@@ -27,9 +27,11 @@ async def developer(desarrollador: str):
 async def userdata( User_id : str ):
     usuario = userdata_(User_id)
     return usuario
-"""
-#funcion N3
 
+#funcion N3
+# La funcion N3 no me funciona en render, debido al data set de item. Diferente que de manera local si me funciona,
+# ya que, disponemos de mas memoria ram
+"""
 @app.get("/UserForGenre/{genero}")
 async def UserForGenre(genero: str):
     Horas_por_año = UserForGenre_(genero)

@@ -4,7 +4,7 @@ import pickle
 
 df1 = pd.read_parquet("clean_steam_games")
 df2 = pd.read_parquet("clean_review")
-# df3 = pd.read_parquet("clean_items")ES EL PROBLEMA, ESTE , ESTE ITEMS ES EL PROBLEMA 
+# df3 = pd.read_parquet("clean_items")  LA LECTURA AL DATA SET DE ITEMS ME IMPIDE QUE FUNCIENE MI RENDER, DEBIDO QUE SOLO DISPONEMOS DE 500 DE RAM
 # df_marge_item = pd.merge(df1, df3,on="item_id" ) #tabla de steam junto con item
 
 df_merge_review = pd.merge(df1 ,df2, on="item_id") #tabla de steam junto con review
