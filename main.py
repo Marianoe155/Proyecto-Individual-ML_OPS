@@ -1,6 +1,6 @@
 from typing import Union
 from fastapi import FastAPI
-from funciones import developer_reviews_analysis_,developer_,best_developer_year_ ,userdata_#,UserForGenre_
+from funciones import developer_reviews_analysis_,developer_,best_developer_year_ ,userdata_,recomendacion_usuario_#,UserForGenre_
 from fastapi.responses import JSONResponse 
 
 app= FastAPI()
@@ -53,5 +53,10 @@ async def developer_reviews_analysis(developer: str):
     Reseñas = developer_reviews_analysis_(developer)
     return Reseñas
 
+#funcion N5
 
+@app.get("/recomendacion_usuario/{id_usuario}")
+async def recomendacion_usuario(id_usuario: str):
+    recomendaciones = recomendacion_usuario_(id_usuario)
+    return recomendacion
 

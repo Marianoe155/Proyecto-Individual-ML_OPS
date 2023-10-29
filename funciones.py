@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-
+import pickle
 
 df1 = pd.read_parquet("clean_steam_games")
 df2 = pd.read_parquet("clean_review")
@@ -9,6 +9,7 @@ df2 = pd.read_parquet("clean_review")
 
 df_merge_review = pd.merge(df1 ,df2, on="item_id") #tabla de steam junto con review
 
+merge_ML = df_merge_review[["user_id","recommend","sentiment_analysis","app_name"]] #selecciono las columnas para el ML
 
 #funcion N1
 
@@ -135,4 +136,27 @@ def developer_reviews_analysis_(developer):
     # Se devuelve un diccionario con los resultados obtenidos
     return dicc
 
+#funcion_de_ML N6 
+with open ("modelo_de_ML.pkl", "rb") as archivo: 
+    modelo_pickle = pickle.load(archivo)
+
+def recomendacion_usuario_(id_usuario):
+    
+    juegos_jugados = merge_ML[merge_ML["user_id"] == id_usuario]["app_name"].unique()
+    
+    juegos = merge_ML["app_name"].unique()
+    
+    juegos_no_jugados = list(set(juegos) - set(juegos_jugados))
+
+    predic_no_jugados = [modelo_pickle.predict(id_usuario, linea) for linea in juegos_no_jugados]
+
+    Top5_recomm = sorted(predic_no_jugados, key=lambda x: x.est, reverse=True)[:5] 
+
+    lista_juegos = []
+    for recomendacion in Top5_recomm:
+    lista_juegos.append(recomendacion.iid)
+
+    return {f"Juego 1:{lista_juegos[0]}, Juego 2:{lista_juegos[1]}, Juego 3:{lista_juegos[2]}, Juego 4:{lista_juegos[3]}, Juego 5:{lista_juegos[4]}"}
+
+    
 
