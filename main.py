@@ -58,5 +58,5 @@ async def developer_reviews_analysis(developer: str):
 @app.get("/recomendacion_usuario/{id_usuario}")
 async def recomendacion_usuario(id_usuario: str):
     recomendaciones = recomendacion_usuario_(id_usuario)
-    return recomendacion
+    return recomendaciones
 
