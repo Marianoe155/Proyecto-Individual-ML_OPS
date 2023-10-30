@@ -85,7 +85,7 @@ La aplicación la podras encontrar abajo como la última funció disponible en [
 
 ## Autor
 
-+ Mariano Emanuel Baigorri
++ Mariano Emanuel Baigorria
 + [GitHub](https://github.com/Marianoe155)
 + [Linkedin](https://www.linkedin.com/in/mariano-baigorria-b85004282/)
 
