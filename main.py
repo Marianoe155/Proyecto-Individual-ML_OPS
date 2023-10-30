@@ -55,7 +55,7 @@ async def developer_reviews_analysis(developer: str):
     Reseñas = developer_reviews_analysis_(developer)
     return Reseñas
 
-#funcion N5
+#funcion N6 ML
 
 @app.get("/recomendacion_usuario/{id_usuario}")
 async def recomendacion_usuario(id_usuario: str):
