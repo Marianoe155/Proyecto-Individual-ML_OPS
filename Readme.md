@@ -1,6 +1,8 @@
-<p align=center><img src=https://juststickers.in/wp-content/uploads/2017/04/machine-learning.png><p>
+<p align=center><img src=https://d31uz8lwfmyn8g.cloudfront.net/Assets/logo-henry-white-lg.png><p>
 
 # <h1 align=center> **PROYECTO INDIVIDUAL ML-OPS** </h1>
+
+<p align=center><img src=https://ubuntucommunity.s3.dualstack.us-east-2.amazonaws.com/original/3X/5/5/559eebb1b680098adc83ef22cbba1078d3b43033.png><p>
 
 # <h1 align=center> **Introducción** </h1>
 
@@ -10,7 +12,7 @@ El desafío que se plantea en este proyecto es el desarrollo de un proceso de Ma
 
 ## **Transform and Load** (ETL)
 
-En mi rol de Data Engineer, hemos abordado con éxito el proceso de Extraction, Transform, and Load (ETL) como parte fundamental de este proyecto. A continuación, destacaré algunos de los pasos clave en el proceso, que se encuentran detallados en el archivo [ETL.ipynb](ETL.ipynb) junto con comentarios paso a paso. Aunque estos pasos están enumerados en un orden específico, es importante tener en cuenta que algunos de ellos se repiten a lo largo del flujo de trabajo:
+En mi rol de Data Engineer, hemos abordado con éxito el proceso de Extraction, Transform, and Load (ETL) como parte fundamental de este proyecto. A continuación, destacaré algunos de los pasos clave en el proceso, que se encuentran detallados en el archivo [ETL.ipynb](Entregables/ETL.ipynb) junto con comentarios paso a paso. Aunque estos pasos están enumerados en un orden específico, es importante tener en cuenta que algunos de ellos se repiten a lo largo del flujo de trabajo:
 
 + **Extracción de Datos**: En este primer paso, se extrajeron los datos de las fuentes pertinentes, como bases de datos, archivos, o servicios web. Esto garantiza que tengamos acceso a la información necesaria.
 
@@ -26,7 +28,7 @@ En mi rol de Data Engineer, hemos abordado con éxito el proceso de Extraction, 
 
 ## **Análisis Exploratorio de Datos** (EDA)
 
-Se realizó un análisis en profundidad de los datos para comprender sus características, distribuciones y relaciones. Esto ayudó a identificar patrones y tendencias que serán útiles en etapas posteriores. El detalle completo de este proceso se encuentra registrado paso a paso en el archivo [EDA.ipynb](EDA.ipynb), lo que nos ha permitido responder algunas preguntas clave, como:
+Se realizó un análisis en profundidad de los datos para comprender sus características, distribuciones y relaciones. Esto ayudó a identificar patrones y tendencias que serán útiles en etapas posteriores. El detalle completo de este proceso se encuentra registrado paso a paso en el archivo [EDA.ipynb](Entregables/EDA.ipynb), lo que nos ha permitido responder algunas preguntas clave, como:
 
 ### `¿Cuáles son los "Developers" con más usuarios?` 
 ### `¿Cuáles son los juegos con mayor recomendación?`
@@ -57,7 +59,7 @@ Una vez que todos los datos son accesibles a través de la API y están disponib
 
 Instanciamos nuestro modelo utilizando la librería `surprise` y hemos creado nuestra propia escala de calificación de juegos, que llamamos `rating`. Luego, procedimos a dividir los datos para poder entrenar el modelo de manera efectiva. Una vez completada esta etapa, hemos empleado el algoritmo de *Singular Value Decomposition (SVD)* para llevar a cabo el entrenamiento de nuestro modelo de recomendación.
 
-Los detalles exhaustivos de todo este proceso se encuentran disponibles en el archivo [ML.ipynb](ML.ipynb). Después de completar el entrenamiento del modelo, lo hemos guardado en un archivo con extensión `.pkl` llamado [modelo_de_ML.pkl](modelo_de_ML.pkl). Esta acción nos permitirá utilizar el modelo de manera eficaz en nuestra función dentro de la API.
+Los detalles exhaustivos de todo este proceso se encuentran disponibles en el archivo [ML.ipynb](Entregables/ML.ipynb). Después de completar el entrenamiento del modelo, lo hemos guardado en un archivo con extensión `.pkl` llamado [modelo_de_ML.pkl](modelo_de_ML.pkl). Esta acción nos permitirá utilizar el modelo de manera eficaz en nuestra función dentro de la API.
 
 Este modelo entrenado con SVD está listo para generar recomendaciones precisas y personalizadas basadas en las calificaciones y preferencias de los usuarios, contribuyendo así a mejorar la experiencia de los usuarios y a impulsar las estrategias de retención y fidelización.
 
@@ -71,9 +73,9 @@ La aplicación la podras encontrar abajo como la última funció disponible en [
 
 ### Carpeta Entregables
 
-+ [ETL](ETL.ipynb)
-+ [EDA](EDA.ipynb)
-+ [Machine learning](ML.ipynb)
++ [ETL](Entregables/ETL.ipynb)
++ [EDA](Entregables/EDA.ipynb)
++ [Machine learning](Entregables/ML.ipynb)
 
 ## Fuentes de datos
 
