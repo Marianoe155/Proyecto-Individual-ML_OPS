@@ -69,7 +69,7 @@ La aplicación la podras encontrar abajo como la última funció disponible en [
 
 ## **Video**
 
-[![Mirar el Video](src/thumbnail.jpg)](https://youtu.be/NoPQ7eE4Sy4)
+[![`Mirar el Video`](https://www.youtube.com/watch?v=OrVL2gzds40)
 
 ### Carpeta Entregables
 
