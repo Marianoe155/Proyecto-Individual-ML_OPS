@@ -8,6 +8,17 @@
 
 El desafío que se plantea en este proyecto es el desarrollo de un proceso de Machine Learning Operations (MLOps) integral que abarque diversas etapas fundamentales. Comenzando con la Ingeniería de Datos, se llevará a cabo la Extraction, Transform and Load (ETL) de manera eficiente y efectiva. Posteriormente, se adentrará en el terreno del Machine Learning, donde se realizará un exhaustivo Exploratory Data Analysis (EDA) para comprender en profundidad los datos. Además, se explorarán y entrenarán múltiples modelos para encontrar la mejor solución. El proyecto culminará con la implementación de un sistema de deployment que no solo abarca el modelo, sino también los datos del proceso ETL. 
 
+# <h1 align=center> **Índice** </h1>
+
+- [Transform and Load (ETL)](#transform-and-load-etl)
+- [Análisis Exploratorio de Datos (EDA)](#análisis-exploratorio-de-datos-eda)
+- [Desarrollo de la aplicación de FAST API](#desarrollo-de-la-aplicación-de-fast-api)
+- [Sistema de recomendación](#sistema-de-recomendación)
+- [Video](#video)
+- [Fuentes de datos](#fuentes-de-datos)
+- [Carpeta Entregables](#carpeta-entregables)
+- [Autor](#autor)
+
 # <h1 align=left> **Desarrollo del Proyecto**</h1>
 
 ## **Transform and Load** (ETL)
@@ -71,7 +82,7 @@ La aplicación la podras encontrar abajo como la última funció disponible en [
 
 [Mirar el Video](https://www.youtube.com/watch?v=OrVL2gzds40)
 
-### Carpeta Entregables
+## Carpeta Entregables
 
 + [ETL](Entregables/ETL.ipynb)
 + [EDA](Entregables/EDA.ipynb)
